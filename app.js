@@ -48,7 +48,6 @@ const populate = async ()=>{
             document.getElementById('u-email').value = previous.email
             document.querySelector('#updateUserModal').classList.toggle('d-none')
             updateIndex = client.id
-            console.log(updateIndex)
         })
         let del = createClientCred('i', 'delBtn')
         del.classList.add('far','fa-minus-square')
@@ -94,7 +93,7 @@ document.querySelector('#add-user-form').addEventListener('submit', function(e){
             name : name.value,
             username : username.value,
             email : email.value,
-            id : data.length+1
+            id : Math.floor(Math.random()*100)
         }
         data.push(newData)
         populate()
